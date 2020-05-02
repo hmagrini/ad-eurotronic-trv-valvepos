@@ -30,7 +30,7 @@ class EurotronicTRVValvePos(hass.Hass):
 
                 # iterate over zwave domain entities, look for specific "product_name" attribute value
                 # that value indicates that the entity is Z-Wave device entity for EUROTRONIC TRV
-                if (v["attributes"]["product_name"] == self.args.get("look_for_productname", "EUR_SPIRITZ Wall Radiator Thermostat")):
+                if (v["attributes"]["product_name"] in self.args.get("look_for_productname", ["EUR_SPIRITZ Wall Radiator Thermostat"])):
                     node_id = v["attributes"]["node_id"]
                     self.log("Processing Z-Wave node ID " + str(node_id), level = "DEBUG")
 

@@ -40,17 +40,19 @@ eurotronic-trv-valvepos:
   module: eurotronic-trv-valvepos
   class: EurotronicTRVValvePos
   ozw_log_path: "/config/OZW_Log.txt"
-  look_for_productname: "EUR_SPIRITZ Wall Radiator Thermostat"
+  look_for_productname:
+    - "EUR_SPIRITZ Wall Radiator Thermostat"
+    - "ZWA021 Thermostatic Valve"
   refresh_seconds: 300
 ```
 
 Key | Required | Type | Default | Description
 -- | -- | -- | -- | --
-`module` | True | string | | Module name, should be `eurotronic-trv-valvepos`
-`class` | True | string | | App class name, should be `EurotronicTRVValvePos`
-`ozw_log_path` | False | string | `/config/OZW_Log.txt` | Path to OZW log file, default works in [Hass.io](https://www.home-assistant.io/hassio/)
-`look_for_productname` | False | string | `EUR_SPIRITZ Wall Radiator Thermostat` | Z-Wave product name to look for when searching for TRV Z-Wave device entities, default works for SPIRIT Z-Wave Plus TRV
-`refresh_seconds` | False | integer | 300 | Seconds between log scans
+`module` | True | `string` | | Module name, should be `eurotronic-trv-valvepos`
+`class` | True | `string` | | App class name, should be `EurotronicTRVValvePos`
+`ozw_log_path` | False | `string` | `/config/OZW_Log.txt` | Path to OZW log file, default works in [Hass.io](https://www.home-assistant.io/hassio/)
+`look_for_productname` | False | `string | [string]` | `EUR_SPIRITZ Wall Radiator Thermostat` | Z-Wave product names to look for when searching for TRV Z-Wave device entities, default works for SPIRIT Z-Wave Plus TRV
+`refresh_seconds` | False | `integer` | 300 | Seconds between log scans
 
 ## Troubleshooting
 
